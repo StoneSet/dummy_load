@@ -1,4 +1,4 @@
-# 📡 Project: Audio Wattmeter with OLED Display and Temperature Sensor
+# 📡 Audio Wattmeter with OLED Display and Temperature Sensor
 
 ## 📖 Description
 
