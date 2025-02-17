@@ -1,8 +1,9 @@
+
 # 📡 Audio Wattmeter with OLED Display and Temperature Sensor
 
 ## 📖 Description
 
-This project aims to measure the output power of an audio amplifier based on a 4 Ω or 8 Ω load.
+This project aims to measure the output power of an audio amplifier based on a **4 Ω** or **8 Ω** load.
 The values are displayed on two 0.96" OLED screens via the I2C protocol.
 A **DS18B20** sensor monitors the temperature, activating a fan if a critical threshold is reached.
 
@@ -16,7 +17,7 @@ The load can operate up to >250W.
 - Display on **two OLED screens**
 - Activation of a cooling fan based on temperature
 
-### To-do
+### To-do (feature)
 
 - **Real-time monitoring** via serial output
 
@@ -42,7 +43,7 @@ The load can operate up to >250W.
 | 2        | Audio Connection Terminals | Jack / Banana  |
 | 4        | 100W Resistor | 2.7Ω  |
 | 2        | 100W Resistor | 15Ω  |
-| 2        | 100W Resistor | 2.5KΩ  |
+| 2        | 100W Resistor | 2.5Ω  |
 | 2        | SPDT Switch | 1321S ON ON  |
 | 1        | LED + resistor | Red 2.5mm + 10kΩ  |
 
@@ -56,12 +57,12 @@ The load can operate up to >250W.
    - **Security relay R channel** to **D2**
    - **Security relay L channel** to **D3**
    - **Temperature indicator LED** to **D8**
-2. **Upload the program** via Arduino IDE
-3. **Observe the displayed values** on the OLEDs
+2. **Upload the program** and voila !
 
 ---
 
 ### Inspirations :
 
-http://tolisdiy.com/2021/03/30/compact-stereo-dummy-load-for-amplifier-testing/
-https://andydoz.blogspot.com/2016/04/arduino-audio-wattmeter.html
+[http://tolisdiy.com/2021/03/30/compact-stereo-dummy-load-for-amplifier-testing/](http://tolisdiy.com/2021/03/30/compact-stereo-dummy-load-for-amplifier-testing/)
+
+[https://andydoz.blogspot.com/2016/04/arduino-audio-wattmeter.html](https://andydoz.blogspot.com/2016/04/arduino-audio-wattmeter.html)
