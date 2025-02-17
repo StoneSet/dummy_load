@@ -1,3 +1,5 @@
+//sorry comments are in french
+
 #include <OneWire.h>
 #include <DallasTemperature.h>
 #include <Wire.h>
@@ -7,8 +9,8 @@
 #define DS18B20_PIN 12  // Broche de la sonde DS18B20
 #define LED_PIN 8       // LED témoin
 #define RELAY_FAN_PIN 4 // Relais ventilateur
-#define RELAY_PIN1 2    // Relais 1
-#define RELAY_PIN2 3    // Relais 2
+#define RELAY_PIN1 2    // Relais 1 channel R
+#define RELAY_PIN2 3    // Relais 2 channel L
 
 // Seuils de température
 const float TEMP_THRESHOLD_FAN = 27.0;
@@ -19,7 +21,7 @@ const float loadResistance4Ohms = 4.0;
 const float loadResistance8Ohms = 8.0;
 
 // Facteur du pont diviseur de tension
-const float R8 = 76000.0;
+const float R8 = 76000.0; // a ajuster selon la stabilité de la tension de référence pour l'ADC interne
 const float R9 = 10000.0;
 const float divFactor = (R8 + R9) / R9;
 
@@ -31,7 +33,7 @@ const int voltagePin_R = A1;
 OneWire oneWire(DS18B20_PIN);
 DallasTemperature sensors(&oneWire);
 
-// Initialisation des écrans OLED en mode "Full Buffer"
+// Initialisation des écrans OLED en mode "Full Buffer" (ouch plus bcp d'espace dans la SRAM, donc attention)
 U8G2_SSD1306_128X64_NONAME_F_HW_I2C display_L(U8G2_R0, U8X8_PIN_NONE);
 U8G2_SSD1306_128X64_NONAME_F_HW_I2C display_R(U8G2_R0, U8X8_PIN_NONE);
 
@@ -100,7 +102,7 @@ void loop() {
 
   // === 🖥️ AFFICHAGE VOIE GAUCHE (Écran 0x3C) ===
   display_L.clearBuffer();
-  display_L.setCursor(20, 10);  // Ajustement de la position du titre
+  display_L.setCursor(20, 10);
   display_L.print("VOIE GAUCHE");
 
   display_L.setCursor(5, 25);
